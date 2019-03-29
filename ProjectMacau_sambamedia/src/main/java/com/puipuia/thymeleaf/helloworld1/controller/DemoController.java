@@ -35,12 +35,18 @@ public class DemoController {
 	@GetMapping("/electric") 
 	public String showElectricForm() {
 		
-		return "employees/ElectricForm";  
+		return "views/ElectricForm";  
 	}
+	
+	@GetMapping("/success") 
+	public String showPage() {
+		
+		return "views/success"; 
 	
 	
 }
 	
+}
 
 
 

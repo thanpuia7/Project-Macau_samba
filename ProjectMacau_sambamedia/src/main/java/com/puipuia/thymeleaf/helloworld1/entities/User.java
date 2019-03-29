@@ -32,7 +32,7 @@ public class User {
 	@Column(name="name")
 	private String name;
 	
-	@Size(min=2,max=20,message="Password should be between 2 to 20")
+	@Size(min=2,max=200,message="Password should be between 2 to 20")
 	@NotEmpty(message="Password field should not be empty")
 	@Column(name="password")
 	private String password;

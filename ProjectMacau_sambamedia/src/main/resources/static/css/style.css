@@ -7,6 +7,9 @@ body{
 	padding: 0;
 
 }
+.mySpace{
+	padding-top: 20px;
+}
 
 .banner{
 	background: url(../images/slider-6.png) no-repeat center;

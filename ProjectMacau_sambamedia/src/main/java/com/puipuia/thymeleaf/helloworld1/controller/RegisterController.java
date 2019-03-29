@@ -40,7 +40,7 @@ public class RegisterController {
 	
 		userService.createUser(user);
 		
-		return "views/sourcecode";
+		return "index";
 
 	}
 
