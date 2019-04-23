@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+
+
+
+<head>
+    <!-- Required meta tags -->
+   <!-- Bootstrap -->
+	
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    
+
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+     <link rel="stylesheet" th:href="@{/css/css/font-awesome.min.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"  src="/js/main.js"></script>
+    
+	<title>Public Service Delivery System - Admin Profile</title>
+</head>
+
+<body>
+
+<p>
+
+Welcome: <span sec:authentication="principal.username"/></span>
+
+profile
+
+
+
+
+
+
+
+
+</body>
+</html>
