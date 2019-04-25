@@ -75,6 +75,9 @@ header{
 
 .navbar{
 	padding: 0px;
+	position: relative;
+  left: 1em;
+  top: 1em;
 }
 
 .navbar-nav li{

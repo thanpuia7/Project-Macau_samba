@@ -27,16 +27,89 @@
 
 <body>
 
-<p>
 
 Welcome: <span sec:authentication="principal.username"/></span>
 
-profile
 
 
+<nav class="navbar navbar-default">
+<div class="container">
+<div class="nav-header">
+	<div class="navbar-brand">User List</div>
+</div>
+	<ul class="nav navbar-nav">
+	<li> <a href="#">Home</a></li>
+	<li><a href=" ">About</a></li>
+	<li><a href=" ">FAQ </a></li>
+	</ul>
+</div>
+	</nav>
 
+<div class="container">
+<div>
+	<h3>User List</h3>
+	<hr>
+	
+	<!-- Add a button -->
+	<a th:href="@{/company/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
+		Add User
+	</a>
+	
+	<div>
+	 <form th:action="@{/company/search}" class="form-inline">
+	        <div class="form-group mb-2">
+	         <input type="text" class="form-control" name="title" placeholder="Search Company" />
+	         <input type="submit" value="Search"  class="btn btn-primary"/>
+	        </div>
+	     </form>
+	</div>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>User Email</th>
+				<th>User Name</th>
+				<th>User Password</th>
+				<th>User dfgdfgs</th>
+	
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempUsers: ${users}">
+				
+				<td th:text="${tempUsers.email}" />
+				<td th:text="${tempUsers.name}" />		
+				<td th:text="${tempUsers.password}" />
+		
+				
+	            
+				<td><a th:href="@{/admin/profile/(id=${tempUsers.email})}" class="btn btn-primary eBtn">Edit</a>
+					<a th:href="@{/admin/profile/(id=${tempUsers.email})}" class="btn btn-danger dBtn">Delete</a> 
+				</td>
+				
+			</tr>
+		</tbody>	
+		
+  			
+	</table>
 
+            <ul class="nav nav-pills" >
+	
+			<li class="nav-item" th:each="i : ${#numbers.sequence(0,users.totalPages-1)}">
+	
+			<a th:href="@{/admin/profile/(page=${i})}" th:text="${i}" class="nav-link"
+			
+			th:classappend="${currentPage}==${i}? 'active':''"></a>
+	
+			 </li>
+	
+			</ul>	
 
+</div>	
+
+</div>	
 
 
 
