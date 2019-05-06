@@ -82,7 +82,12 @@ Welcome: <span sec:authentication="principal.username"/></span>
 				<td th:text="${tempUsers.email}" />
 				<td th:text="${tempUsers.name}" />		
 				<td th:text="${tempUsers.password}" />
+				
 		
+				<td>
+				<p th:each="user_roless: ${user_roles}" th:if="(${user_roless.user_email}==${tempUsers.email})" th:text="${user_roless.role_name}"> </p>
+				</td>
+				
 				
 	            
 				<td><a th:href="@{/admin/profile/(id=${tempUsers.email})}" class="btn btn-primary eBtn">Edit</a>
