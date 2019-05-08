@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.puipuia.thymeleaf.helloworld1.Services.UserService;
+import com.puipuia.thymeleaf.helloworld1.entities.District;
+import com.puipuia.thymeleaf.helloworld1.entities.Sumo;
 import com.puipuia.thymeleaf.helloworld1.entities.User;
 
 
@@ -55,9 +57,10 @@ public class DemoController {
 	@GetMapping("/sumo") 
 	public String showSumoForm(Model model) {
 
-		  User theUser = new User();
+		  Sumo theSumo = new Sumo();
 		
-			model.addAttribute("users", theUser);
+			model.addAttribute("sumo", theSumo);
+			model.addAttribute("districts",District.values());
 	
 		return "views/SumoForm";  
 	}

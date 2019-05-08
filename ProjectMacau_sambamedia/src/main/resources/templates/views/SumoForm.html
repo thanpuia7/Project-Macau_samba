@@ -35,9 +35,46 @@
 	<h3>Sumo Tickets Booking</h3>
 	
 
-<p>From:
-<p>To:
-<p>Date:
+<form th:method="post" th:object="${sumo}">
+
+<div class="form-group">
+
+<label th:for="From">From:</label>
+
+<select th:field="*{From}">
+	<option th:each="district : ${districts}"
+	th:text="${district.name}"
+	th:value="${district}">
+	</option>
+</select>
+
+
+</div>
+
+
+<div class="form-group">
+
+<label th:for="From">To:</label>
+
+<select th:field="*{To}">
+	<option th:each="district : ${districts}"
+	th:text="${district.name}"
+	th:value="${district}">
+	</option>
+</select>
+
+<label class="col-xs-2">Departure</label>
+    <div class="col-xs-2">
+    <input type="date" class="form-control" th:field="*{Date}" placeholder="Date of Birth" />
+    </div>
+
+
+</div>
+
+
+
+
+</form>
 
 
 

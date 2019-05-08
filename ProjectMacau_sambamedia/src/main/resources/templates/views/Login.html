@@ -21,6 +21,8 @@
 </head>
 <body>
 
+
+<div class="container">
 	<div class="alert alert-danger" th:if="${param.error}">
 	
      <h2>Invalid Email or Password</h2>	
@@ -28,12 +30,12 @@
 		<form th:action="@{/login}"  method="post">
 
 			<div class="form-group">
-				<label for="email" class="form-control-label">Email</label> <input
+				<label for="email" class="form-control-label">Email:</label> <input
 					type="text" class="form-control"  id="email" name="username" />
 			
 			</div>
 			<div class="form-group">
-				<label for="password" class="form-control-label">Password</label> <input
+				<label for="password" class="form-control-label">Password:</label> <input
 					type="password" class="form-control" 
 					id="password"  name="password"/>
 				
@@ -43,6 +45,7 @@
 			<input type="submit" value="Submit" class="btn btn-primary" />
 
 		</form>
+		</div>
 	
 </body>
 </html>
