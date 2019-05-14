@@ -35,7 +35,11 @@
 	<h3>Sumo Tickets Booking</h3>
 	
 
-<form th:method="post" th:object="${sumo}">
+
+<div class="alert alert-danger" th:text="${title}"></div>
+	
+
+<form th:method="post" th:object="${sumo}" th:action="sumoSearch">
 
 <div class="form-group ">
 
@@ -52,10 +56,12 @@
 </div>
 
 
-
 <div class="form-group ">
 
 <label th:for="To">To:</label>
+
+
+
 
 <select th:field="*{To}">
 	<option th:each="district : ${districts}"
