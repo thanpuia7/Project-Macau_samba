@@ -18,7 +18,7 @@ District(String name){
 public String getName() {
 	return name;
 }
-	
-	
+
+
 
 }
