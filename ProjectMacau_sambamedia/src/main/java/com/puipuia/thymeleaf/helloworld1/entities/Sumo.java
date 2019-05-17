@@ -153,11 +153,14 @@ public class Sumo {
 		Seat8 = seat8;
 	}
 
-	public Sumo(String date, String vacancy, String seat1, String seat2, String seat3,
+	
+	
+	public Sumo(String date, District from, District to, String vacancy, String seat1, String seat2, String seat3,
 			String seat4, String seat5, String seat6, String seat7, String seat8) {
 		
 		Date = date;
-	
+		From = from;
+		To = to;
 		Vacancy = vacancy;
 		Seat1 = seat1;
 		Seat2 = seat2;
@@ -169,13 +172,13 @@ public class Sumo {
 		Seat8 = seat8;
 	}
 
-	public Sumo(String id, String date,String vacancy, String seat1, String seat2,
+	public Sumo(String id, String date, District from, District to, String vacancy, String seat1, String seat2,
 			String seat3, String seat4, String seat5, String seat6, String seat7, String seat8) {
 		
 		this.id = id;
 		Date = date;
-		//From = from;
-		//To = to;
+		From = from;
+		To = to;
 		Vacancy = vacancy;
 		Seat1 = seat1;
 		Seat2 = seat2;
@@ -186,10 +189,6 @@ public class Sumo {
 		Seat7 = seat7;
 		Seat8 = seat8;
 	}
-	
-	
-	
-	
 
 	public Sumo() {
 		

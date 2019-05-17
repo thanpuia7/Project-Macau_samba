@@ -28,7 +28,15 @@ public class SumoController {
 	
 	@Autowired
 	SumoRepository sumoRepository;
+	@Autowired
 	SumoServices sumoServices;
+	
+	
+	@Autowired
+	SumoController(SumoRepository sumoRepository){
+		this.sumoRepository=sumoRepository;
+		
+	}
 	
 	
 	@GetMapping("/sumo") 
@@ -97,37 +105,30 @@ public class SumoController {
 		}
 		
 		
-		String F,T,D;
+	
 		
-		F=sumo.getFrom().toString();
-		T=sumo.getTo().toString();
-		D=sumo.getDate().toString();
+	List <Sumo>	 sumo1=(sumoServices.findByFromToDate(sumo.getFrom(),sumo.getTo(),sumo.getDate()));
 		
-		
-		List<Sumo> sumo1=(sumoServices.findByDateFromTo(F,T,D));
-		
+	    
+		 
+		 
+		 if(sumo1.isEmpty())
+	    		
+	    		{
+	    	
+	    	
+	    	model.addAttribute("sumo3", sumo1);
+	    	
+	    	System.out.println("helsdlkfjalskdjflkasjdflkasjdflkj"+sumo.getFrom());
+	    	return "views/SumoBookingForm";
+	    	
 
+	    
+	    }
 		
-		if(sumo1.isEmpty())
-		{
-			Sumo theSumo = new Sumo();
-			
-			model.addAttribute("sumo", theSumo);
-			model.addAttribute("districts",District.values());
-			
-			
-		System.out.println("Ka ti dik thei ta eeee");
-		return "views/SumoForm";
+		System.out.println("xxxxxxxxxxxxxxxxxxxx"+sumo.getDate());
 		
-		}
-		
-		
-		Sumo theSumo = new Sumo();
-		
-		model.addAttribute("sumo", theSumo);
-		model.addAttribute("districts",District.values());
-		
-		return "views/SumoForm";
+		return "views/SumoBookingForm";
 		
 	
 }
