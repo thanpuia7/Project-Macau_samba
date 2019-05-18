@@ -21,13 +21,13 @@ public class SumoServices {
 	
 	
 	
-	public List<Sumo> findByFromToDate(District From, District To,String Date){ 
+	public Sumo findByFromTo(District From, District To){ 
 
 		
 		 
 		
 	
-	return sumoRepository.findByFromAndToAndDate(From,To,Date);
+	return sumoRepository.findByFromAndTo(From,To);
 				
 				
 				

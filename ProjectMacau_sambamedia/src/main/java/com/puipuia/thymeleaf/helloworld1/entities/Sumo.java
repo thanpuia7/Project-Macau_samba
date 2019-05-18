@@ -3,8 +3,12 @@ package com.puipuia.thymeleaf.helloworld1.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 
 @Entity
+@Table(name= "Sumo")
 public class Sumo {
 
 	@Id

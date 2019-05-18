@@ -52,16 +52,20 @@ public class SumoController {
 	
 	
 	@PostMapping("/sumoSearch")
-	public String searchSumo(@ModelAttribute Sumo sumo, Model model) {
+	public String searchSumo(@ModelAttribute("sumo") Sumo theSumo, Model model) {
 		
-		if(sumo.getFrom().equals(sumo.getTo()))
+		
+		 
+		 model.addAttribute("sumo", theSumo);
+			model.addAttribute("districts",District.values());
+		
+		if(theSumo.getFrom().equals(theSumo.getTo()))
 		{
 			model.addAttribute("title","Please select Different Destination");
 			
-			Sumo theSumo = new Sumo();
 			
-			model.addAttribute("sumo", theSumo);
-			model.addAttribute("districts",District.values());
+			
+			
 			
 			
 	
@@ -84,49 +88,44 @@ public class SumoController {
 	*/	
 	
 		
-		else if((sumo.getFrom()).toString()=="AIZAWL")
+		else if((theSumo.getFrom()).toString()=="AIZAWL")
 			
 		{
-			 Sumo theSumo = new Sumo();
-				
-				model.addAttribute("sumo", theSumo);
-				model.addAttribute("districts",District.values());
+			 
 				
 				
 				System.out.println("hslkjdlkfajsdlf");
 				
 				
-				sumo.setVacancy("7");
+				theSumo.setVacancy("7");
 				
 				
-				System.out.println(sumo.getVacancy());
+				System.out.println(theSumo.getVacancy());
 		
 			return "views/SumoForm"; 
 		}
-		
-		
-	
-		
-	List <Sumo>	 sumo1=(sumoServices.findByFromToDate(sumo.getFrom(),sumo.getTo(),sumo.getDate()));
+
+Sumo sumo1=(sumoServices.findByFromTo(theSumo.getFrom(),theSumo.getTo()));
 		
 	    
 		 
 		 
-		 if(sumo1.isEmpty())
+		 if(sumo1!=null)
 	    		
 	    		{
 	    	
+		
 	    	
-	    	model.addAttribute("sumo3", sumo1);
+	    //	model.addAttribute("sumo3", sumo1);
 	    	
-	    	System.out.println("helsdlkfjalskdjflkasjdflkasjdflkj"+sumo.getFrom());
+	    	System.out.println("helsdlkfjalskdjflkasjdflkasjdflkj");
 	    	return "views/SumoBookingForm";
 	    	
 
 	    
 	    }
 		
-		System.out.println("xxxxxxxxxxxxxxxxxxxx"+sumo.getDate());
+		System.out.println("xxxxxxxxxxxxxxxxxxxx"+theSumo.getDate());
 		
 		return "views/SumoBookingForm";
 		

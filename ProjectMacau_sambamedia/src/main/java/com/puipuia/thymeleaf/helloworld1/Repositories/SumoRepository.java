@@ -2,6 +2,7 @@ package com.puipuia.thymeleaf.helloworld1.Repositories;
 
 
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -13,9 +14,8 @@ import com.puipuia.thymeleaf.helloworld1.entities.Sumo;
 
 public interface SumoRepository extends CrudRepository<Sumo, String>{
 	
-        @Query(value="SELECT p FROM Sumo p WHERE p.From=?1 AND p.To=?2 AND p.Date=?3")
-		
-        
-        List <Sumo> findByFromAndToAndDate(District From,District To,String Date);
+        @Query(value="SELECT *FROM `Sumo` WHERE `From`=?1 AND `To`=?2",nativeQuery=true)
+  
+        Sumo findByFromAndTo(District From,District To);
 
 }
