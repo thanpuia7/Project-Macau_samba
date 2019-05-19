@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.puipuia.thymeleaf.helloworld1.Repositories.DistrictRepository;
 import com.puipuia.thymeleaf.helloworld1.Repositories.SumoRepository;
 import com.puipuia.thymeleaf.helloworld1.Services.SumoServices;
 import com.puipuia.thymeleaf.helloworld1.entities.District;
@@ -30,12 +30,14 @@ public class SumoController {
 	SumoRepository sumoRepository;
 	@Autowired
 	SumoServices sumoServices;
+	@Autowired
+	DistrictRepository districtRepository;
 	
 	
 	@Autowired
-	SumoController(SumoRepository sumoRepository){
+	SumoController(SumoRepository sumoRepository, DistrictRepository districtRepository){
 		this.sumoRepository=sumoRepository;
-		
+		this.districtRepository=districtRepository;
 	}
 	
 	
@@ -45,7 +47,7 @@ public class SumoController {
 		  Sumo theSumo = new Sumo();
 		
 			model.addAttribute("sumo", theSumo);
-			model.addAttribute("districts",District.values());
+			model.addAttribute("districts",districtRepository.findAll());
 	
 		return "views/SumoForm";  
 	}
@@ -57,7 +59,7 @@ public class SumoController {
 		
 		 
 		 model.addAttribute("sumo", theSumo);
-			model.addAttribute("districts",District.values());
+			model.addAttribute("districts",districtRepository.findAll());
 		
 		if(theSumo.getFrom().equals(theSumo.getTo()))
 		{
@@ -88,7 +90,7 @@ public class SumoController {
 	*/	
 	
 		
-		else if((theSumo.getFrom()).toString()=="AIZAWL")
+		else if((theSumo.getFrom())=="AIZAWL")
 			
 		{
 			 
@@ -105,18 +107,22 @@ public class SumoController {
 			return "views/SumoForm"; 
 		}
 
-Sumo sumo1=(sumoServices.findByFromTo(theSumo.getFrom(),theSumo.getTo()));
+	
+	
+  List <Sumo> sumo1=(sumoServices.findByFromToDate(theSumo.getFrom(),theSumo.getTo(),theSumo.getDate()));
 		
 	    
 		 
 		 
-		 if(sumo1!=null)
+		 if(sumo1.isEmpty())
 	    		
 	    		{
 	    	
 		
 	    	
 	    //	model.addAttribute("sumo3", sumo1);
+			 
+			 model.addAttribute("things",theSumo);
 	    	
 	    	System.out.println("helsdlkfjalskdjflkasjdflkasjdflkj");
 	    	return "views/SumoBookingForm";
@@ -125,7 +131,10 @@ Sumo sumo1=(sumoServices.findByFromTo(theSumo.getFrom(),theSumo.getTo()));
 	    
 	    }
 		
+	
 		System.out.println("xxxxxxxxxxxxxxxxxxxx"+theSumo.getDate());
+		
+		model.addAttribute("things",sumo1);
 		
 		return "views/SumoBookingForm";
 		

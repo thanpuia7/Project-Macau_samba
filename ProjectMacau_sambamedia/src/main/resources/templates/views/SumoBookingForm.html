@@ -37,6 +37,52 @@
 
 
 <div class="alert alert-danger" th:text="${title}"></div>
+
+
+
+<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Sumo ID</th>
+				<th>Date</th>
+				<th>From</th>
+				<th>To</th>
+				<th>Vacancy</th>
+				<th>Seat1</th>
+				<th>Seat2</th>
+				<th>Seat3</th>
+				<th>Seat4</th>
+				<th>Seat5</th>
+				<th>Seat6</th>
+				<th>Seat7</th>
+				<th>Seat8</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempCom: ${things}">
+				
+				<td th:text="${tempCom.id}" />
+				<td th:text="${tempCom.Date}" />	
+				<td th:text="${tempCom.From}" />	
+				<td th:text="${tempCom.To}" />
+				<td th:text="${tempCom.Vacancy}" />
+				<td th:text="${tempCom.Seat1}" />
+				<td th:text="${tempCom.Seat2}" />
+				<td th:text="${tempCom.Seat3}" />
+				<td th:text="${tempCom.Seat4}" />
+				<td th:text="${tempCom.Seat5}" />
+				<td th:text="${tempCom.Seat6}" />
+				<td th:text="${tempCom.Seat7}" />
+				<td th:text="${tempCom.Seat8}" />
+			
+				
+			</tr>
+		</tbody>	
+		
+  			
+	</table>
+
 	
 
 

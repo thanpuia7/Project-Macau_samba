@@ -1,24 +1,58 @@
 package com.puipuia.thymeleaf.helloworld1.entities;
 
-public enum District {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="District")
+public class District {
+	
+	@Id
+	@Column(name="id")
+	private String id;
+	
+	@Column(name="name")
+	private String name;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public District(String name, String id) {
+		
+		this.name = name;
+		this.id = id;
+	}
+
+	public District(String name) {
+		
+		this.name = name;
+	}
+
+	public District() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return "District [id=" + id + ", name=" + name + "]";
+	}
 	
 	
-AIZAWL("Aizawl"),
-LUNGLEI("Lunglei"),
-CHAMPHAI("Champhai"),
-KOLASIB("Kolasib");
 	
-	
-private String name;
-
-District(String name){
-	this.name=name;
-}
-
-public String getName() {
-	return name;
-}
-
-
 
 }

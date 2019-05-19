@@ -19,10 +19,10 @@ public class Sumo {
 	private String Date;
 	
 	@Column(name="From")
-	private District From;
+	private String From;
 	
 	@Column(name="To")
-	private District To;
+	private String To;
 	
 	
 
@@ -53,115 +53,167 @@ public class Sumo {
 	@Column(name="Seat8")
 	private String Seat8;
 
+	
+	
 	public String getId() {
 		return id;
 	}
+
+
 
 	public void setId(String id) {
 		this.id = id;
 	}
 
+
+
 	public String getDate() {
 		return Date;
 	}
+
+
 
 	public void setDate(String date) {
 		Date = date;
 	}
 
-	public District getFrom() {
+
+
+	public String getFrom() {
 		return From;
 	}
 
-	public void setFrom(District from) {
+
+
+	public void setFrom(String from) {
 		From = from;
 	}
 
-	public District getTo() {
+
+
+	public String getTo() {
 		return To;
 	}
 
-	public void setTo(District to) {
+
+
+	public void setTo(String to) {
 		To = to;
 	}
+
+
 
 	public String getVacancy() {
 		return Vacancy;
 	}
 
+
+
 	public void setVacancy(String vacancy) {
 		Vacancy = vacancy;
 	}
+
+
 
 	public String getSeat1() {
 		return Seat1;
 	}
 
+
+
 	public void setSeat1(String seat1) {
 		Seat1 = seat1;
 	}
+
+
 
 	public String getSeat2() {
 		return Seat2;
 	}
 
+
+
 	public void setSeat2(String seat2) {
 		Seat2 = seat2;
 	}
+
+
 
 	public String getSeat3() {
 		return Seat3;
 	}
 
+
+
 	public void setSeat3(String seat3) {
 		Seat3 = seat3;
 	}
+
+
 
 	public String getSeat4() {
 		return Seat4;
 	}
 
+
+
 	public void setSeat4(String seat4) {
 		Seat4 = seat4;
 	}
+
+
 
 	public String getSeat5() {
 		return Seat5;
 	}
 
+
+
 	public void setSeat5(String seat5) {
 		Seat5 = seat5;
 	}
+
+
 
 	public String getSeat6() {
 		return Seat6;
 	}
 
+
+
 	public void setSeat6(String seat6) {
 		Seat6 = seat6;
 	}
+
+
 
 	public String getSeat7() {
 		return Seat7;
 	}
 
+
+
 	public void setSeat7(String seat7) {
 		Seat7 = seat7;
 	}
+
+
 
 	public String getSeat8() {
 		return Seat8;
 	}
 
+
+
 	public void setSeat8(String seat8) {
 		Seat8 = seat8;
 	}
 
-	
-	
-	public Sumo(String date, District from, District to, String vacancy, String seat1, String seat2, String seat3,
+
+
+	public Sumo(String date, String from, String to, String vacancy, String seat1, String seat2, String seat3,
 			String seat4, String seat5, String seat6, String seat7, String seat8) {
-		
+	
 		Date = date;
 		From = from;
 		To = to;
@@ -176,7 +228,9 @@ public class Sumo {
 		Seat8 = seat8;
 	}
 
-	public Sumo(String id, String date, District from, District to, String vacancy, String seat1, String seat2,
+
+
+	public Sumo(String id, String date, String from, String to, String vacancy, String seat1, String seat2,
 			String seat3, String seat4, String seat5, String seat6, String seat7, String seat8) {
 		
 		this.id = id;
@@ -194,9 +248,13 @@ public class Sumo {
 		Seat8 = seat8;
 	}
 
+
+
 	public Sumo() {
 		
 	}
+
+
 
 	@Override
 	public String toString() {
@@ -204,7 +262,7 @@ public class Sumo {
 				+ ", Seat1=" + Seat1 + ", Seat2=" + Seat2 + ", Seat3=" + Seat3 + ", Seat4=" + Seat4 + ", Seat5=" + Seat5
 				+ ", Seat6=" + Seat6 + ", Seat7=" + Seat7 + ", Seat8=" + Seat8 + "]";
 	}
-	
-	
+
+
 	
 }
