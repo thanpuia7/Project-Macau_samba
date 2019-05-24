@@ -153,19 +153,29 @@ header{
 }
 
 .crl4{
-	background: #47ae28;
+	background: #2dde98;
 }
 
 .crl5{
-	background: #d2b91a;
+	background: #2dde98;
 }
 
 .crl6{
-	background: #8e43e7;
+	background: #2dde98;
 }
 
 
+.services .fa{
+	
+	color: #fff;
+}
 
+
+.services .more-bttn{
+	background: #fff;
+	color:#333;
+	
+}
 
 .about_grid{
 	text-align: center;
@@ -205,14 +215,14 @@ header{
 
 
 .services{
-	background-color: #000;
+	background-color: #ebebeb;
 	margin-top: 40px;
 	padding-bottom: 40px;
 	
 }
 
 .services h1{
-	color:#fff;
+	color:#2d2d2d;
 	text-align: center;
 	letter-spacing: 12px;
 	text-transform: uppercase;
@@ -220,12 +230,14 @@ header{
 }
 
 .services h3{
-	color: #ff4f81;
+	color: #2d2d2d;
+	text-align:center;
 	margin-bottom: 20px;
 }
 
 .services p{
-	color: #fff;
+	color: #2d2d2d;
+	text-align:center;
 	padding: 10px 137px 0px;
 	
 }

@@ -3,7 +3,7 @@ package com.puipuia.thymeleaf.helloworld1.controller;
 
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.puipuia.thymeleaf.helloworld1.Repositories.DistrictRepository;
 import com.puipuia.thymeleaf.helloworld1.Repositories.SumoRepository;
 import com.puipuia.thymeleaf.helloworld1.Services.SumoServices;
-import com.puipuia.thymeleaf.helloworld1.entities.District;
+
 import com.puipuia.thymeleaf.helloworld1.entities.Sumo;
 
 
@@ -90,23 +90,7 @@ public class SumoController {
 	*/	
 	
 		
-		else if((theSumo.getFrom())=="AIZAWL")
-			
-		{
-			 
-				
-				
-				System.out.println("hslkjdlkfajsdlf");
-				
-				
-				theSumo.setVacancy("7");
-				
-				
-				System.out.println(theSumo.getVacancy());
-		
-			return "views/SumoForm"; 
-		}
-
+	
 	
 	
   List <Sumo> sumo1=(sumoServices.findByFromToDate(theSumo.getFrom(),theSumo.getTo(),theSumo.getDate()));
@@ -119,10 +103,10 @@ public class SumoController {
 	    		{
 	    	
 		
-	    	
+	    	sumoRepository.save(theSumo);
 	    //	model.addAttribute("sumo3", sumo1);
 			 
-			 model.addAttribute("things",theSumo);
+			 model.addAttribute("things",sumoRepository.findAll());
 	    	
 	    	System.out.println("helsdlkfjalskdjflkasjdflkasjdflkj");
 	    	return "views/SumoBookingForm";

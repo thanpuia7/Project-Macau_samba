@@ -15,7 +15,7 @@ import com.puipuia.thymeleaf.helloworld1.entities.Sumo;
 
 public interface SumoRepository extends CrudRepository<Sumo, String>{
 	
-       @Query(value="SELECT *FROM `Sumo` WHERE `From`=?1 AND `To`=?2 AND `Date`=?3",nativeQuery=true)
+       @Query(value="SELECT *FROM Sumo WHERE Fromm=?1 AND Too=?2 AND Datee=?3",nativeQuery=true)
   
      public  List<Sumo> findByFromAndToAndDate(String From,String To,String Date);
 
