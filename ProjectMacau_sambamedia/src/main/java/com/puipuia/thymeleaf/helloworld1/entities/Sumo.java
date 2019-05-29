@@ -30,7 +30,7 @@ public class Sumo {
 	
 
 	@Column(name="Vacancy")
-	private String Vacancy;
+	private Integer Vacancy;
 	
 	@Column(name="Seat1")
 	private String Seat1;
@@ -91,11 +91,11 @@ public class Sumo {
 		To = to;
 	}
 
-	public String getVacancy() {
+	public Integer getVacancy() {
 		return Vacancy;
 	}
 
-	public void setVacancy(String vacancy) {
+	public void setVacancy(Integer vacancy) {
 		Vacancy = vacancy;
 	}
 
@@ -171,7 +171,7 @@ public class Sumo {
 		Rate = rate;
 	}
 
-	public Sumo(String id, String date, String from, String to, String vacancy, String seat1, String seat2,
+	public Sumo(String id, String date, String from, String to, Integer vacancy, String seat1, String seat2,
 			String seat3, String seat4, String seat5, String seat6, String seat7, String seat8, String rate) {
 		
 		this.id = id;
@@ -190,7 +190,7 @@ public class Sumo {
 		Rate = rate;
 	}
 
-	public Sumo(String date, String from, String to, String vacancy, String seat1, String seat2, String seat3,
+	public Sumo(String date, String from, String to, Integer vacancy, String seat1, String seat2, String seat3,
 			String seat4, String seat5, String seat6, String seat7, String seat8, String rate) {
 		
 		Date = date;
@@ -207,6 +207,8 @@ public class Sumo {
 		Seat8 = seat8;
 		Rate = rate;
 	}
+	
+	
 
 	public Sumo() {
 		
@@ -218,6 +220,7 @@ public class Sumo {
 				+ ", Seat1=" + Seat1 + ", Seat2=" + Seat2 + ", Seat3=" + Seat3 + ", Seat4=" + Seat4 + ", Seat5=" + Seat5
 				+ ", Seat6=" + Seat6 + ", Seat7=" + Seat7 + ", Seat8=" + Seat8 + ", Rate=" + Rate + "]";
 	}
+
 	
 	
 	

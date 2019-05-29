@@ -36,53 +36,126 @@
 	
 
 
-<div class="alert alert-danger" th:text="${title}"></div>
+<!--  <div class="alert alert-danger" th:text="${title}"></div>
+
+<div class="alert alert-danger" th:text="${Ruak}"></div>-->
 
 
-
+<div class="container">
+<p> A= Available    X= Not Available</p>
 <table class="table table-bordered table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th>Sumo ID</th>
-				<th>Date</th>
-				<th>From</th>
-				<th>To</th>
-				<th>Vacancy</th>
-				<th>Seat1</th>
-				<th>Seat2</th>
-				<th>Seat3</th>
-				<th>Seat4</th>
-				<th>Seat5</th>
-				<th>Seat6</th>
-				<th>Seat7</th>
-				<th>Seat8</th>
+			
+				<th >Seat No1</th>
+				<th>Seat No2</th>
+				<th>Driver</th>
+			
 			</tr>
+			
 		</thead>
 		
 		<tbody>
 			<tr th:each="tempCom: ${things}">
 				
-				<td th:text="${tempCom.id}" />
-				<td th:text="${tempCom.Date}" />	
-				<td th:text="${tempCom.From}" />	
-				<td th:text="${tempCom.To}" />
-				<td th:text="${tempCom.Vacancy}" />
 				<td th:text="${tempCom.Seat1}" />
-				<td th:text="${tempCom.Seat2}" />
-				<td th:text="${tempCom.Seat3}" />
-				<td th:text="${tempCom.Seat4}" />
-				<td th:text="${tempCom.Seat5}" />
-				<td th:text="${tempCom.Seat6}" />
-				<td th:text="${tempCom.Seat7}" />
-				<td th:text="${tempCom.Seat8}" />
+				<td th:text="${tempCom.Seat2}" />	
+				<td>	X  </td>
+				
+			</tr>
+		</tbody>	
+		
+		<thead class="thead-dark">
+			<tr>
 			
+				<th >Seat No3</th>
+				<th>Seat No4</th>
+				<th>Seat No5</th>
+			
+			</tr>
+			
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempCom: ${things}">
+				
+				<td th:text="${tempCom.Seat3}" />
+				<td th:text="${tempCom.Seat4}" />	
+				<td th:text="${tempCom.Seat5}" />
+				
+			</tr>
+		</tbody>	
+		
+		
+			<thead class="thead-dark">
+			<tr>
+			
+				<th >Seat No6</th>
+				<th>Seat No7</th>
+				<th>Seat No8</th>
+			
+			</tr>
+			
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempCom: ${things}">
+				
+				<td th:text="${tempCom.Seat6}" />
+				<td th:text="${tempCom.Seat7}" />	
+				<td th:text="${tempCom.Seat8}" />
 				
 			</tr>
 		</tbody>	
 		
   			
 	</table>
+	
+	
+	
+<form th:method="post" th:object="${booking}" th:action="sumoBooking">
+	
+	
+	
+	
+	
+	<input type="text" th:field="*{Name}"
+					class="form-control mb-4 col-8" placeholder="Name">
+					
+	<input type="text" th:field="*{Address}"
+					class="form-control mb-4 col-8" placeholder="Address">
+					
+	 <input type="text" th:field="*{Seat}"
+					class="form-control mb-4 col-8" placeholder="Enter Your Seat">
+					
+		
+		
+		
+		
+    <button type="submit" class="btn btn-info col-2">Book</button>			
+</form>
 
+
+</div>
+
+<form  th:action="@{https://www.example.com/payment/success/}" method="POST">
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    th:data-key="rzp_test_7IAjCksmwutVn3"
+    th:data-amount="299" 
+    data-buttontext="Pay with Razorpay"
+  	data-name="Acme Corp"
+    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name="Gaurav Kumar"
+    data-prefill.email="gaurav.kumar@example.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+          
+
+ <a class="nav-link" href="views/pay">Register</a>
 	
 
 
