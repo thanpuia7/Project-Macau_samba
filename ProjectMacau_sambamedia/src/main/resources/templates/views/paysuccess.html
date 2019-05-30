@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+
+
+
+<head>
+    <!-- Required meta tags -->
+   <!-- Bootstrap -->
+	
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    
+
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+     <link rel="stylesheet" th:href="@{/css/css/font-awesome.min.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"  src="/js/main.js"></script>
+    
+	<title>Public Service Delivery System</title>
+</head>
+
+<body>
+
+
+<div class="container">
+<P> Receipt</P>
+
+ <p class="font-weight-bold">Name: <span th:text="${bo.Name}"></span></p>
+<p class="font-weight-bold">Address: <span th:text="${bo.Address}"></span></p>
+<p class="font-weight-bold">Seat No: <span th:text="${bo.Seat}"></span></p>
+<p class="font-weight-bold">Rate: Rs.<span th:text="${su.Rate}"></span></p>
+
+
+<div class="alert alert-danger">Payment Successful</div>
+
+</div>
+</body>
+
+
+
+
+
+
+</html>

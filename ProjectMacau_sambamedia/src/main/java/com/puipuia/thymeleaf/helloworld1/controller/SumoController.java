@@ -75,7 +75,7 @@ public class SumoController {
 		{
 			model.addAttribute("title","Please select Different Destination");
 			
-			
+			model.addAttribute("districts",districtRepository.findAll());
 			
 			
 			
@@ -266,38 +266,49 @@ public class SumoController {
 		
 		
 		
-		sumoRepository.save(this.theSumo);
+		
 		
 		
 		theBooking.setStatus("T");
 		
 		this.theBooking=theBooking;
 		
-		bookingRepository.save(theBooking);
+		
 		
 		 // model.addAttribute("book", theBooking);
 		 
 			//model.addAttribute("districts",districtRepository.findAll());
 		
 			
+			model.addAttribute("detail1",this.theSumo);
+			model.addAttribute("detail2",this.theBooking);
 			
+			
+			int result = Integer.parseInt(this.theSumo.getRate());
+			
+			result=(result*100);
+			model.addAttribute("Rate",(result));
 			
 			return "views/pay";
 	
 	}
 	
 	
-	@GetMapping("/www.example.com/payment/success/")
+	@PostMapping("/paysuccess")
 	public String Hellosdf(Model model)
 	
 	{
 		
 		
 
-		model.addAttribute("sumo", theSumo);
-		model.addAttribute("districts",districtRepository.findAll());
+		model.addAttribute("su", this.theSumo);
+		model.addAttribute("bo",this.theBooking);
+		
+		
+		sumoRepository.save(this.theSumo);
+		bookingRepository.save(this.theBooking);
 
-	return "views/SumoForm";  
+	return "views/paysuccess";  
 		
 		
 		

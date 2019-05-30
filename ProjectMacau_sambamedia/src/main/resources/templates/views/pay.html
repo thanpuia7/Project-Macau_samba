@@ -31,19 +31,23 @@
 <div class="container">
 <P> Make Payment here</P>
 
+<p class="font-weight-bold">Name: <span th:text="${detail2.Name}"></span></p>
+<p class="font-weight-bold">Address: <span th:text="${detail2.Address}"></span></p>
+<p class="font-weight-bold">Seat No: <span th:text="${detail2.Seat}"></span></p>
+<p class="font-weight-bold">Rate: Rs.<span th:text="${Rate}"></span></p>
 
 
-
-<form  th:action="@{https://www.example.com/payment/success/}" method="POST">
+<form  th:action="@{/paysuccess}" method="POST">
 <script
     src="https://checkout.razorpay.com/v1/checkout.js"
     th:data-key="rzp_test_7IAjCksmwutVn3"
-    th:data-amount="299" 
+    th:data-amount="200" 
+    th:data-currency="INR"
     data-buttontext="Pay with Razorpay"
-  	data-name="Acme Corp"
+  	data-name="MSeGS"
     data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
     data-image="https://example.com/your_logo.jpg"
-    data-prefill.name="Gaurav Kumar"
+    data-prefill.name="[[${detail2.Name}]]"
     data-prefill.email="thanpuia7@gmail.com"
     data-theme.color="#F37254"
 ></script>
