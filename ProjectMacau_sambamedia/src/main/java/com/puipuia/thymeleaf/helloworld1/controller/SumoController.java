@@ -163,6 +163,7 @@ public class SumoController {
 												{
 				 
 													model.addAttribute("Ruak","Seat Full - Select other date ");
+													model.addAttribute("districts",districtRepository.findAll());
 				 
 															return "views/SumoForm";
 				 
@@ -286,8 +287,9 @@ public class SumoController {
 			
 			int result = Integer.parseInt(this.theSumo.getRate());
 			
-			result=(result*100);
+			result=(result*1000);
 			model.addAttribute("Rate",(result));
+			model.addAttribute("Name",this.theBooking.getName());
 			
 			return "views/pay";
 	
