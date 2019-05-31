@@ -31,7 +31,7 @@
 </div>
 	</nav>
 	
-	
+	<div class="container">
 	<h3>Sumo Tickets Booking</h3>
 	
 
@@ -41,7 +41,7 @@
 <div class="alert alert-danger" th:text="${Ruak}"></div>-->
 
 
-<div class="container">
+
 <p> A= Available    X= Not Available</p>
 <table class="table table-bordered table-striped">
 		<thead class="thead-dark">
@@ -121,12 +121,22 @@
 	
 	<input type="text" th:field="*{Name}"
 					class="form-control mb-4 col-8" placeholder="Name">
+					<br>
 					
 	<input type="text" th:field="*{Address}"
 					class="form-control mb-4 col-8" placeholder="Address">
 					
-	 <input type="text" th:field="*{Seat}"
-					class="form-control mb-4 col-8" placeholder="Enter Your Seat">
+		<br>		
+		<br>			
+		<p th:if="${things.Seat1 == 'A'}"> <label >Seat 1</label> <input type="radio"  th:field="*{Seat}" value="1"/></p>
+		<p th:if="${things.Seat2 == 'A'}"><label >Seat 2</label> <input type="radio"   th:field="*{Seat}" value="2"/></p>
+		<p th:if="${things.Seat3 == 'A'}"><label>Seat 3	</label> <input type="radio"   th:field="*{Seat}" value="3"/></p>
+		<p th:if="${things.Seat4 == 'A'}"><label>Seat 4	</label> <input type="radio"   th:field="*{Seat}" value="4"/></p>
+		<p th:if="${things.Seat5 == 'A'}"><label >Seat 5</label> <input type="radio"   th:field="*{Seat}" value="5"/> </p>
+		<p th:if="${things.Seat6 == 'A'}"><label>Seat 6	</label> <input type="radio"   th:field="*{Seat}" value="6"/></p>
+		<p th:if="${things.Seat7 == 'A'}"><label>Seat 7	</label> <input type="radio"   th:field="*{Seat}" value="7"/></p>
+		<p th:if="${things.Seat8 == 'A'}"><label>Seat 8	</label> <input type="radio"   th:field="*{Seat}" value="8"/></p>
+	
 					
 		
 		

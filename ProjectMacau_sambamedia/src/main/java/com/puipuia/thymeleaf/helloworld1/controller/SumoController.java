@@ -128,7 +128,7 @@ public class SumoController {
 	    	
 			
 			
-			theSumo.setVacancy(8);
+			theSumo.setVacancy(7);
 			theSumo.setSeat1("A");
 			theSumo.setSeat2("A");
 			theSumo.setSeat3("A");
@@ -159,7 +159,7 @@ public class SumoController {
 								
 								
 								
-										if(sumo2.getVacancy().equals(0))
+										if(sumo2.getVacancy()==0)
 												{
 				 
 													model.addAttribute("Ruak","Seat Full - Select other date ");
@@ -171,9 +171,36 @@ public class SumoController {
 										
 										
 										
-										theSumo=sumo2;
-								/*		theSumo.setId(sumo2.getId());
-										theSumo.setVacancy(sumo2.getVacancy());
+									
+										
+										
+									
+										 
+										  if(sumo2.getVacancy().equals(7))
+											  theSumo.setVacancy(6);
+										 
+										 else  if(sumo2.getVacancy().equals(6))
+											  theSumo.setVacancy(5);
+										 
+										 else  if(sumo2.getVacancy().equals(5))
+											  theSumo.setVacancy(4);
+										 
+										 else  if(sumo2.getVacancy().equals(4))
+											  theSumo.setVacancy(3);
+										 
+										 else  if(sumo2.getVacancy().equals(3))
+											  theSumo.setVacancy(2);
+										 
+										 else  if(sumo2.getVacancy().equals(2))
+											  theSumo.setVacancy(1);
+										 
+										 else  if(sumo2.getVacancy().equals(1))
+											  theSumo.setVacancy(0);
+										 
+										
+										
+										theSumo.setId(sumo2.getId());
+								
 										theSumo.setSeat1(sumo2.getSeat1());
 										theSumo.setSeat2(sumo2.getSeat2());
 										theSumo.setSeat3(sumo2.getSeat3());
@@ -182,7 +209,7 @@ public class SumoController {
 										theSumo.setSeat6(sumo2.getSeat6());
 										theSumo.setSeat7(sumo2.getSeat7());
 										theSumo.setSeat8(sumo2.getSeat8());
-									*/	
+										
 		 
 									}	 
 							
@@ -192,9 +219,9 @@ public class SumoController {
 								
 		this.theSumo=theSumo;
 	
-	this.sumo1=sumo1;
+
 		
-		model.addAttribute("things",sumo1);
+		model.addAttribute("things",this.theSumo);
 		
 		return "views/SumoBookingForm";
 		
@@ -208,31 +235,8 @@ public class SumoController {
 	public String sumoBooking(@ModelAttribute("booking") Booking theBooking, Model model) {
 		
 		
-		 
-	 if(this.theSumo.getVacancy().equals(8))
-	  this.theSumo.setVacancy(7);
-	 
-	 else  if(this.theSumo.getVacancy().equals(7))
-		  this.theSumo.setVacancy(6);
-	 
-	 else  if(this.theSumo.getVacancy().equals(6))
-		  this.theSumo.setVacancy(5);
-	 
-	 else  if(this.theSumo.getVacancy().equals(5))
-		  this.theSumo.setVacancy(4);
-	 
-	 else  if(this.theSumo.getVacancy().equals(4))
-		  this.theSumo.setVacancy(3);
-	 
-	 else  if(this.theSumo.getVacancy().equals(3))
-		  this.theSumo.setVacancy(2);
-	 
-	 else  if(this.theSumo.getVacancy().equals(2))
-		  this.theSumo.setVacancy(1);
-	 
-	 else  if(this.theSumo.getVacancy().equals(1))
-		  this.theSumo.setVacancy(0);
-	 
+
+	
 	
 		
 		
