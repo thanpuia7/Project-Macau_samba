@@ -292,6 +292,8 @@ public class SumoController {
 			int result = Integer.parseInt(this.theSumo.getRate());
 			
 			result=(result*1000);
+			
+			theSumo.setRate(Integer.toString(result));
 			model.addAttribute("Rate",(result));
 			model.addAttribute("Name",this.theBooking.getName());
 			
